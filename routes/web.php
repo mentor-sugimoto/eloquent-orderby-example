@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PostController@index');
+
+Route::resource('users', UserController::class, ['only' => ['index']]);
+
+Route::resource('posts', PostController::class, ['only' => ['index']]);

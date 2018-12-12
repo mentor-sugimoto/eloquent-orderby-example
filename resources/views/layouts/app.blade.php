@@ -12,6 +12,14 @@
 
     <!-- Styles -->
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <style type="text/css">
+        .post-text {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -41,6 +49,12 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                        <li class="{{ Route::currentRouteNamed('users.index') ? 'active' : '' }}">
+                            <a href="{{ route('users.index') }}">Users</a>
+                        </li>
+                        <li class="{{ Route::currentRouteNamed('posts.index') ? 'active' : '' }}">
+                            <a href="{{ route('posts.index') }}">Posts</a>
+                        </li>
                     </ul>
                 </div>
             </div>
